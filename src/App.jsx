@@ -5,14 +5,22 @@ import Header from "./components/Header";
 import Note from "./components/Note";
 import CreateArea from "./components/CreateArea";
 
+
+// implement Add Notes
+// implement Delete Notes
+
 function App() {
 
   const [notes, setNotes] = useState([]);
 
   function addNote(note) {
-    setNotes((prevNotes) => {
-      return [...prevNotes, note];
-    });
+    if (note.title != "") {
+      setNotes((prevNotes) => {
+        console.log(note);
+        return [...prevNotes, note];
+
+      });
+    }
   }
 
   function deleteNote(id) {
